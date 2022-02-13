@@ -4,7 +4,7 @@ const Button = ({name, link}) => {
         <a 
             href={link} 
             target='_blank'
-            className="dark:text-white dark:bg-[#1f1f1f] text-black bg-slate-200 font-medium text-sm  px-6 py-2 rounded-full"
+            className="dark:text-white dark:bg-[#1f1f1f] text-black bg-slate-200 font-medium text-sm  px-4 py-2 rounded-full"
         >
             {name}
         </a>

@@ -3,7 +3,14 @@ module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}'],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        grandslang: ['Grandslang roman', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
+        silka_medium: ['Silka Medium'],
+        silka_regular: ['Silka Regular']
+      },
+    },
   },
   variants: {
     extend: {},
