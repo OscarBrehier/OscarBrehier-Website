@@ -14,18 +14,23 @@ const Container = (props) => {
 
         <>  
             <Helmet>
-                <title>{meta.title}</title> 
+
+                <title>Oscar Bréhier</title>
+                <meta name="title" content={meta.title} />
                 <meta name="description" content={meta.description} />
 
-                <meta name="og:type" content="website" />
-                <meta name="og:title" content={meta.title} />
-                <meta name="og:description" content={meta.description} />
-                <meta name="og:image" content={meta.image} />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://brehieroscar.vercel.app" />
+                <meta property="og:title" content={meta.title} />
+                <meta property="og:description" content={meta.description} />
+                <meta property="og:image" content={meta.image} />
 
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name='twitter:site' content='@OscarBrehier'/>
-                <meta name="twitter:title" content={meta.title} />
-                <meta name="twitter:description" content={meta.description} />
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta property="twitter:url" content="https://brehieroscar.vercel.app/" />
+                <meta property="twitter:title" content={meta.title} />
+                <meta property="twitter:description" content={meta.description} />
+                <meta property="twitter:image" content={meta.image} />
+
             </Helmet>
             <div>
                 {children}
