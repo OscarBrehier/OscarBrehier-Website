@@ -1,5 +1,5 @@
 import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import {Acceuil} from './pages/pages';
+import {Acceuil, About} from './pages/pages';
 import Navigation from './components/Navigation';
 
 const App = () => {
@@ -12,7 +12,7 @@ const App = () => {
         <Routes>
           
           <Route path='/' element={<Acceuil/>} exact/>
-          <Route path='/about'/>
+          <Route path='/about' element={<About/>} exact />
           <Route path='*' element={<div>404 - NOT FOUND</div>}/>
 
         </Routes>
