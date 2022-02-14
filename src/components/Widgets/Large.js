@@ -1,4 +1,4 @@
-    const Large = (props) => {
+const Large = (props) => {
 
     return (
 
@@ -6,7 +6,7 @@
             h-[300px] w-[100%] flex flex-col justify-center bg-white
             sm:h-64 sm:flex-row
             rounded-[34px] 
-            lg:w-[50%]
+            xl:w-[100%]
         ">
             {props.children}
         </div>
