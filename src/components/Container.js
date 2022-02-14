@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet';
+import Metatags from 'react-meta-tags';
 
 const Container = (props) => {
 
@@ -13,7 +13,7 @@ const Container = (props) => {
     return (
 
         <>  
-            <Helmet>
+            <Metatags>
 
                 <title>Oscar Bréhier</title>
                 <meta name="title" content={meta.title} />
@@ -31,7 +31,8 @@ const Container = (props) => {
                 <meta property="twitter:description" content={meta.description} />
                 <meta property="twitter:image" content={meta.image} />
 
-            </Helmet>
+            </Metatags>
+
             <div>
                 {children}
             </div>
