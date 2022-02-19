@@ -1,7 +1,7 @@
-import white from '../../assets/images/logos/github-white.png'; 
-import black from '../../assets/images/logos/github-black.png'; 
+import white from '../../assets/images/logos/instagram-white.png'; 
+import black from '../../assets/images/logos/instagram-black.png'; 
 
-const Github = ({color}) => {
+const Instagram = ({color}) => {
 
     let image = color == 'white' ? black : white;
 
@@ -17,4 +17,4 @@ const Github = ({color}) => {
 
 }
 
-export default Github;
+export default Instagram;

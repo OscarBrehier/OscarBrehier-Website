@@ -2,6 +2,11 @@ import happy from '../../assets/images/emojis/happy-f.png';
 
 const ShortDescription = () => {
 
+    const meta = {
+        name: "Oscar Bréhier", 
+        description: "A 16 year old Student and Full-Stack Developer with a strong focus on looks and user experience."
+    }
+
     return (
 
         <>
@@ -29,14 +34,13 @@ const ShortDescription = () => {
                     ">
                         <p>
                             Hi, I am{" "}
-                            <span className="text-lg font-bold text-black">
-                            Oscar Bréhier
+                            <span className="text-lg font-semibold text-black">
+                            {meta.name}
                             </span>
                             .
                         </p>
                         <p>
-                            A 16 year old Student and Full-Stack Developer with a strong
-                            focus on looks and user experience.
+                            Ipsum fugiat mollit elit enim. Est aliquip ad reprehenderit labore minim et.
                         </p>
                     </div>
               </div>

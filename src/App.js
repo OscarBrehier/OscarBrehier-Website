@@ -7,7 +7,9 @@ const App = () => {
   return (
     
     <Router>
-      <div className="h-auto w-full"> 
+      <div className="h-auto w-full font-poppins"> 
+
+        <Navigation />
 
         <Routes>
           

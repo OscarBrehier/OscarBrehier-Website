@@ -8,7 +8,8 @@ module.exports = {
         grandslang: ['Grandslang roman', 'sans-serif'],
         montserrat: ['Montserrat', 'sans-serif'],
         silka_medium: ['Silka Medium'],
-        silka_regular: ['Silka Regular']
+        silka_regular: ['Silka Regular'],
+        poppins: ['Poppins']
       },
     },
   },
