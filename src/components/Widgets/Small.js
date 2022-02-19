@@ -1,8 +1,9 @@
-import {useState, useRef, useEffect} from 'react'; 
+import {useState} from 'react'; 
 
-const Small = (props) => {
+const Small = ({children, color}) => {
 
     const [height, setHeight] = useState();
+    const background = color == null ? 'white' : color;
     const resizeItem = (width) => { setHeight(width); };
 
     return (
@@ -10,7 +11,7 @@ const Small = (props) => {
         <div 
             className="
                 small w-full bg-white rounded-[34px]
-                xl:w-64 xl:h-64 xl:bg-blue-400 
+                xl:w-64 xl:h-64  
             "
             ref={el => {
 
@@ -18,10 +19,10 @@ const Small = (props) => {
                 window.addEventListener('resize', (event) => resizeItem(el.getBoundingClientRect().width));
                 window.addEventListener('load', (event) => resizeItem(el.getBoundingClientRect().width));
 
-            }} style={{height: height}}
+            }} style={{height: height, backgroundColor: background}}
         >
             
-            {props.children}
+            {children}
 
         </div>
 

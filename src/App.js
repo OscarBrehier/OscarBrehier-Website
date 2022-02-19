@@ -7,7 +7,7 @@ const App = () => {
   return (
     
     <Router>
-      <div className="h-screen w-full bg-[#f7f2f2]"> 
+      <div className="h-auto w-full"> 
 
         <Routes>
           

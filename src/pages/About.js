@@ -1,12 +1,10 @@
-import Container from '../components/Container'; 
-
 const About = () => {
 
     return (
 
-        <Container >
+        <div >
 
-        </Container>
+        </div>
 
     );
 
