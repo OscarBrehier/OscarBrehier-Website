@@ -11,7 +11,7 @@ const Small = ({children, color, link}) => {
         <div
           className="
                 small w-full rounded-[34px] bg-white
-                xl:h-64 xl:w-64  
+                xl:h-64 xl:w-64
             "
           ref={(el) => {
             if (!el) return;
@@ -24,7 +24,7 @@ const Small = ({children, color, link}) => {
           }}
           style={{ height: height, backgroundColor: background }}
         >
-          {children} 
+          {children}
         </div>
       </a>
     );

@@ -1,6 +1,6 @@
 import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import {Acceuil, About} from './pages/pages';
-import Navigation from './components/Navigation';
+import {Acceuil, About} from './pages/index';
+import {Navigation} from './components/index';
 
 const App = () => {
 

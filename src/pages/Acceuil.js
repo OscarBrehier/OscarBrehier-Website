@@ -1,35 +1,53 @@
-import Large from '../components/Widgets/Large';
-import Small from '../components/Widgets/Small';
-import WidgetContainer from '../components/Widgets/WidgetContainer';
-
-import ShortDescription from '../components/WidgetContent/ShortDescription';
-import Github from '../components/WidgetContent/Github';
-import Instagram from '../components/WidgetContent/Instagram';
+import { useState, useEffect } from 'react';
+import { Large, Small, WidgetContainer, Time, ShortDescription } from '../components/index';
+import fetchLocation from '../api/fetchLocation';
 
 const Acceuil = () => {
 
+    const [location, setLocation] = useState();
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        
+      navigator.geolocation.getCurrentPosition(function(position) {
+
+        setLoading(true);
+        fetchLocation(position.coords.latitude, position.coords.longitude).then(res => {
+
+            res.json().then((r) => setLocation(r.country));
+            setLoading(false);
+
+        }); }); }, []);
+
     return (
-      <div className="mb-[15vh] flex h-auto w-full flex-col items-center justify-center">
+      <>
+        {loading === false ? (
 
-        <WidgetContainer>
-          <Large>
-            <ShortDescription />
-          </Large>
+          <div className="mb-[15vh] flex h-auto w-full flex-col items-center justify-center">
+            <WidgetContainer>
+              <Large>
+                <ShortDescription />
+              </Large>
 
-          <div className="flex space-x-4">
-
-            <Small color="white" link='https://github.com/OscarBrehier'>
-              <Github color="white" />
-            </Small>
- 
-            <Small color="white" link='https://github.com/OscarBrehier'>
-              <Instagram color="white" />
-            </Small>
-
+              <div className="flex space-x-4">
+                <Small color="white">
+                  <Time location={location} />
+                </Small>
+              </div>
+            </WidgetContainer>
           </div>
-        </WidgetContainer>
 
-      </div>
+        ) : (
+          
+          <div className="mb-[15vh] flex h-auto w-full flex-col items-center justify-center">
+            <WidgetContainer>
+              <Large></Large>
+              <div className="flex space-x-4"> <Small color="white"></Small> </div>
+            </WidgetContainer>
+          </div>
+
+        )}
+      </> 
     );
 
 };
