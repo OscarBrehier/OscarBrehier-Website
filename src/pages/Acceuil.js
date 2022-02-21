@@ -1,23 +1,42 @@
 import { useState, useEffect } from 'react';
 import { Large, Small, WidgetContainer, Time, ShortDescription } from '../components/index';
 import fetchLocation from '../api/fetchLocation';
+import useLocation from '../hooks/useLocation';
 
 const Acceuil = () => {
 
     const [location, setLocation] = useState();
     const [loading, setLoading] = useState(false);
+    const [storage, setStorage] = useLocation();
 
     useEffect(() => {
-        
-      navigator.geolocation.getCurrentPosition(function(position) {
+
+      if(!storage) {
 
         setLoading(true);
-        fetchLocation(position.coords.latitude, position.coords.longitude).then(res => {
+        navigator.geolocation.getCurrentPosition(function (position) {
 
-            res.json().then((r) => setLocation(r.country));
-            setLoading(false);
+          fetchLocation(position.coords.latitude, position.coords.longitude).then((res) => {
 
-        }); }); }, []);
+              res.json().then((r) => {
+
+                setLocation(r.country);
+                setStorage(r.country);
+                setLoading(false);
+
+              });
+            }
+          );
+        }); 
+
+      } else {
+
+        setLoading(false);
+        setLocation(storage);
+
+      } 
+
+    }, []);
 
     return (
       <>
@@ -26,6 +45,7 @@ const Acceuil = () => {
           <div className="mb-[15vh] flex h-auto w-full flex-col items-center justify-center">
             <WidgetContainer>
               <Large>
+
                 <ShortDescription />
               </Large>
 
@@ -42,12 +62,12 @@ const Acceuil = () => {
           <div className="mb-[15vh] flex h-auto w-full flex-col items-center justify-center">
             <WidgetContainer>
               <Large></Large>
-              <div className="flex space-x-4"> <Small color="white"></Small> </div>
+              <div className="flex space-x-4"><Small color="white"></Small></div>
             </WidgetContainer>
           </div>
 
         )}
-      </> 
+      </>
     );
 
 };

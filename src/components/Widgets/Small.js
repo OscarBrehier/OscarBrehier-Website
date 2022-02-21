@@ -8,7 +8,7 @@ const Small = ({children, color, link}) => {
 
     return (
       <a href={link} target="_blank">
-        <div
+        <div  
           className="
                 small w-full rounded-[34px] bg-white
                 xl:h-64 xl:w-64
@@ -18,9 +18,11 @@ const Small = ({children, color, link}) => {
             window.addEventListener("resize", (event) =>
               resizeItem(el.getBoundingClientRect().width)
             );
-            window.addEventListener("load", (event) =>
+            window.addEventListener("load", async (event) => {
+
               resizeItem(el.getBoundingClientRect().width)
-            );
+
+            });
           }}
           style={{ height: height, backgroundColor: background }}
         >

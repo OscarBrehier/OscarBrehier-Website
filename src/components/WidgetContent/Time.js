@@ -1,32 +1,11 @@
-import {useState, useEffect} from 'react';
-import fetchLocation from '../../api/fetchLocation';
+import {useState} from 'react';
 
 const Time = ({ location }) => {
 
     const [time, setTime]  = useState(new Date());
-    
-
+  
     const timer = () => { setInterval(() => { setTime(new Date()); }, 1000); };
     timer();
-
-    // const [location, setLocation] = useState();
-
-    // useEffect(() => {
-
-    //     setLoading(true);
-
-    //     navigator.geolocation.getCurrentPosition(function(position) {
-
-    //         fetchLocation(position.coords.latitude, position.coords.longitude).then(res => {
-
-    //             res.json().then((r) => setLocation(r.country));
-    //             setLoading(false);
-
-    //         });
-    
-    //     });
-
-    // }, []);
     
     return (
       <>
