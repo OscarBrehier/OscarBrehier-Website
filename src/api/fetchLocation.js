@@ -5,6 +5,6 @@ const fetchLocation = async (lat, lon) => {
 
     return request;
 
-};
+};  
 
 export default fetchLocation;
