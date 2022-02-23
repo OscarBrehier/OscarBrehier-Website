@@ -6,3 +6,8 @@ export { default as Navbar } from './Navigation/Navbar';
 export { default as Container } from './Elements/Container';
 export { default as Divider } from './Elements/Divider';
 export { default as Line } from './Elements/Line'; 
+export { default as ProjectContainer } from './Projects/ProjectContainer';
+export { default as Project } from './Projects/Project';
+export { default as Button } from './Navigation/Button';
+export { default as Contact } from './Contact';
+export { default as Footer } from './Footer';

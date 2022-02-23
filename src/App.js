@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {Acceuil, About} from './pages/index';
-import {Navbar} from './components/index';
+import {Navbar, Footer} from './components/index';
 
 const App = () => {
 
@@ -18,6 +18,8 @@ const App = () => {
                 <Route path="/about" element={<About />} exact />
                 <Route path="*" element={<div>404 - NOT FOUND</div>} />
             </Routes>
+
+            <Footer />
 
         </div>
 

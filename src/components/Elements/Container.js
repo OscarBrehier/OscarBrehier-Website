@@ -10,7 +10,7 @@ const Container = ({children}) => {
                 2xl:w-[60%] 
                 xl:w-[75%] 
                 lg:w-[85%]
-                w-[95%] 
+                w-[90%] 
                 
             ">
                 {children}
