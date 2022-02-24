@@ -10,11 +10,9 @@ const ThemeIcon = () => {
 
       <button onClick={handleMode} className='cursor-pointer'>
         {darkTheme ? (
-          // <FaSun size='24' color="white"/>
-          <div class="text-white font-medium text-sm bg-[#1f1f1f] px-4 py-2 rounded-full">Light mode</div>
+          <FaSun size='18' color='white' />
         ) : (
-          // <FaMoon size='24' />
-          <div class='text-black font-medium text-sm bg-slate-200 px-4 py-2 rounded-full'>Dark mode</div>
+          <FaMoon size='18' />
         )}
       </button>
       

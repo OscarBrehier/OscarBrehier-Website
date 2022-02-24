@@ -4,7 +4,7 @@ const ProjectContainer = () => {
 
     return (
 
-        <div className="h-auto w-full mb-36 mt-10 flex flex-col items-center justify-center space-y-20">
+        <div className="h-auto w-full my-36 flex flex-col items-center justify-center space-y-20">
             <Project 
                 titre='Titre du projet' 
                 type='Type du projet' 

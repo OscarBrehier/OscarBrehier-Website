@@ -11,3 +11,4 @@ export { default as Project } from './Projects/Project';
 export { default as Button } from './Navigation/Button';
 export { default as Contact } from './Contact';
 export { default as Footer } from './Footer';
+export { default as ThemeIcon } from './ThemeIcon';

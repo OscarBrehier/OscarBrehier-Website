@@ -7,9 +7,9 @@ const App = () => {
 
   return (
     <Router>
-      <div className="relative h-auto">
+      <div className="h-auto bg-[#f5f5f7]">
 
-        <div className="h-[95%] font-poppins w-full absolute z-50">
+        <div className="h-[95%] font-poppins w-full">
 
             <Navbar />
 
