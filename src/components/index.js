@@ -12,3 +12,5 @@ export { default as Button } from './Navigation/Button';
 export { default as Contact } from './Contact';
 export { default as Footer } from './Footer';
 export { default as ThemeIcon } from './ThemeIcon';
+export { default as Title } from './Elements/Title';
+export { default as SubContainer } from './Elements/SubContainer';

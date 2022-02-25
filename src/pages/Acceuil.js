@@ -10,8 +10,8 @@ const Acceuil = () => {
                     <div className="flex flex-col items-center text-center">
                         <p className="
                             md:text-7xl text-6xl font-bold 
-                            bg-clip-text bg-gradient-to-r 
-                            from-purple-500 to-pink-500 text-transparent
+                            bg-clip-text text-transparent
+                            bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500
                         ">
                             Hi, I'm Oscar
                         </p>
@@ -20,7 +20,9 @@ const Acceuil = () => {
                         </p>
                     </div>
                 </div>
-                <ProjectContainer />
+                <div className="my-36">
+                    <ProjectContainer />
+                </div>
             </Container>
         </>
     );

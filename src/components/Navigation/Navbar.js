@@ -1,21 +1,24 @@
 import {useState, useEffect} from 'react';
 import {Container} from '../index';
 import {IoArrowForward, IoArrowBack} from 'react-icons/io5';
-import image from '../../assets/images/emojis/happy-f.png'
+import paths from '../../assets/paths';
 
 const Navbar = () => {
 
-    const paths = ['/', '/about', '/projects', '/contact'];
+    // const paths = ['/', '/about', '/projects', '/contact'];
     const [pathBack, setPathBack] = useState();
     const [pathForward, setPathForward] = useState();
-
+    const [visibility, setVisibility] = useState(true);
+    
     const loc = window.location.pathname;
+
+    let check = 0;
     
     useEffect(() => {
-        
-        for (let i = 0; i < 4; i++) {
 
-            const len = paths.length;
+        const len = paths.length;
+
+        for (let i = 0; i < 4; i++) {
 
             if(paths[i] === loc) {
 
@@ -40,39 +43,45 @@ const Navbar = () => {
 
         }
 
+        paths.forEach(path => { if(`${path}` !== loc) check++; });
+        if(check == len) setVisibility(false);
+
     }, []);
 
     return (
 
         <>
-            <Container>
-                <div className="h-24 md:h-32 w-full flex justify-between font-sf_display">
-                    <div className="h-[inherit] w-auto flex items-center">
-                        <a href={pathBack} className="
-                            h-14 w-16 bg-white rounded-full shadow-[0_8px_32px_0_rgb(0,0,0,.10)] flex items-center justify-center
-                        ">
-                            {/* <img className="w-[40%]" src={image} alt="Oscar Bréhier" /> */}
-                            <IoArrowBack />
-                        </a>
-                    </div>
-                    <div className="h-[inherit] w-[100%] flex items-center justify-center">
-                        <div className="
-                            h-14 w-48 bg-white rounded-full flex items-center justify-center shadow-[0_8px_32px_0_rgb(0,0,0,.10)] hover:cursor-pointer
-                        ">
-                            <p className="uppercase font-bold bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 text-transparent">
-                                Oscar Bréhier
-                            </p>
+            { visibility === true ? (
+                
+                <Container>
+                    <div className="h-24 md:h-32 w-full flex justify-between font-sf_display">
+                        <div className="h-[inherit] w-auto flex items-center">
+                            <a href={pathBack} className="
+                                h-14 w-16 bg-white rounded-full shadow-[0_8px_32px_0_rgb(0,0,0,.10)] flex items-center justify-center
+                            ">
+                                <IoArrowBack />
+                            </a>
+                        </div>
+                        <div className="h-[inherit] w-[100%] flex items-center justify-center">
+                            <div className="
+                                h-14 w-48 bg-white rounded-full flex items-center justify-center shadow-[0_8px_32px_0_rgb(0,0,0,.10)] hover:cursor-pointer
+                            ">
+                                <a href='/' className="uppercase font-bold bg-clip-text bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 text-transparent">
+                                    Oscar Bréhier
+                                </a>
+                            </div>
+                        </div>
+                        <div className="h-[inherit] w-auto flex items-center">
+                            <a href={pathForward} className="
+                                h-14 w-16 bg-white rounded-full shadow-[0_8px_32px_0_rgb(0,0,0,.10)] flex items-center justify-center" 
+                            >
+                                <IoArrowForward />
+                            </a>
                         </div>
                     </div>
-                    <div className="h-[inherit] w-auto flex items-center">
-                        <a href={pathForward} className="
-                            h-14 w-16 bg-white rounded-full shadow-[0_8px_32px_0_rgb(0,0,0,.10)] flex items-center justify-center" 
-                        >
-                            <IoArrowForward />
-                        </a>
-                    </div>
-                </div>
-            </Container>
+                </Container>
+
+            ) : ( <div></div> ) }
         </>
 
     );
