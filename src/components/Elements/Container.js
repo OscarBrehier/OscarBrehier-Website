@@ -2,7 +2,7 @@ import {SubContainer} from '../index';
 
 const Container = ({children, sub}) => {
 
-    // if(sub == null) sub = false;
+    if(sub == null) sub = false;
 
     return (
 
